@@ -159,32 +159,32 @@ namespace AddressBook.AddressBook
 
         // uc-07 ensuring their is no duplicate contact details in any addressbook.
         
-        // AddressBook addressBook = new AddressBook();
-        //     Contact contact1 = new Contact
-        //     {
-        //         firstName = "Prashant",
-        //         lastName = "Varshney",
-        //         address = "123 Main",
-        //         city = "CityA",
-        //         state = "StateA",
-        //         zip = 12345,
-        //         phone = "123-456-7890",
-        //         email = "prashant.varshney@example.com"
-        //     };
-        //     addressBook.AddContact(contact1);
-        //     // Attempting to add duplicate contact
-        //     Contact contact2 = new Contact
-        //     {
-        //         firstName = "Prashant",
-        //         lastName = "Varshney",
-        //         address = "456 Elm",
-        //         city = "CityB",
-        //         state = "StateB",
-        //         zip = 67890,
-        //         phone = "098-765-4321",
-        //         email = "pc@gmail.com",
-        //     };
-        //     addressBook.AddContact(contact2); // adding duplicate
+        AddressBook addressBook = new AddressBook();
+            Contact contact1 = new Contact
+            {
+                firstName = "Prashant",
+                lastName = "Varshney",
+                address = "123 Main",
+                city = "CityA",
+                state = "StateA",
+                zip = 12345,
+                phone = "123-456-7890",
+                email = "prashant.varshney@example.com"
+            };
+            addressBook.AddContact(contact1);
+            // Attempting to add duplicate contact
+            Contact contact2 = new Contact
+            {
+                firstName = "Prashant",
+                lastName = "Varshney",
+                address = "456 Elm",
+                city = "CityB",
+                state = "StateB",
+                zip = 67890,
+                phone = "098-765-4321",
+                email = "pc@gmail.com",
+            };
+            addressBook.AddContact(contact2); // adding duplicate
 
 
         }
