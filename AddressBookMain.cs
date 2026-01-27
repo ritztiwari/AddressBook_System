@@ -29,7 +29,7 @@ namespace AddressBook.AddressBook
             // contact.lastName = Console.ReadLine();
             // System.Console.WriteLine("Enter Address: ");
             // contact.address = Console.ReadLine();
-            // System.Console.WriteLine("Enter City: ");
+            // System.Console.WriteLine("Enter city: ");
             // contact.city = Console.ReadLine();
             // System.Console.WriteLine("Enter State name: ");
             // contact.state = Console.ReadLine();
@@ -88,72 +88,105 @@ namespace AddressBook.AddressBook
             // addressBook.DisplayContacts();
 
             //uc-06 adding multiple address books.
-            Dictionary<string,AddressBook> directory = new Dictionary<string, AddressBook>();
+            // Dictionary<string,AddressBook> directory = new Dictionary<string, AddressBook>();
             // AddressBook addressBook = new AddressBook();
-            bool addAddressBooks = true;
+        //     bool addAddressBooks = true;
 
-            while(addAddressBooks)
-            {
-                System.Console.WriteLine("enter the address book name");
-                string name = Console.ReadLine();
+        //     while(addAddressBooks)
+        //     {
+        //         System.Console.WriteLine("enter the address book name");
+        //         string name = Console.ReadLine();
 
-                if (directory.ContainsKey(name))
-                {
-                    System.Console.WriteLine("AddressBook already exists.");
-                }
-                else
-                {
-                    AddressBook addressbook = new AddressBook();
-                    directory.Add(name,addressbook);
-                    System.Console.WriteLine("AddressBook created successfully");
-                }
+        //         if (directory.ContainsKey(name))
+        //         {
+        //             System.Console.WriteLine("AddressBook already exists.");
+        //         }
+        //         else
+        //         {
+        //             AddressBook addressbook = new AddressBook();
+        //             directory.Add(name,addressbook);
+        //             System.Console.WriteLine("AddressBook created successfully");
+        //         }
 
-                System.Console.WriteLine("Do you want to create another the address book if yes/no");
-                string choice = Console.ReadLine();
-                addAddressBooks = choice.Equals("yes");
-            }
+        //         System.Console.WriteLine("Do you want to create another the address book if yes/no");
+        //         string choice = Console.ReadLine();
+        //         addAddressBooks = choice.Equals("yes");
+        //     }
 
-            bool AddContactsInAddressBook = true;
-            while (AddContactsInAddressBook)
-            {
-                System.Console.WriteLine("enter the AddressBook to add contacts in it");
-                string name = Console.ReadLine();
+        //     bool AddContactsInAddressBook = true;
+        //     while (AddContactsInAddressBook)
+        //     {
+        //         System.Console.WriteLine("enter the AddressBook to add contacts in it");
+        //         string name = Console.ReadLine();
 
-                if (directory.ContainsKey(name))
-                {
-                    Contact contact = new Contact();
+        //         if (directory.ContainsKey(name))
+        //         {
+        //             Contact contact = new Contact();
 
-                    System.Console.WriteLine("Enter first name: ");
-                    contact.firstName = Console.ReadLine();
-                    System.Console.WriteLine("Enter last name: ");
-                    contact.lastName = Console.ReadLine();
-                    System.Console.WriteLine("Enter Address: ");
-                    contact.address = Console.ReadLine();
-                    System.Console.WriteLine("Enter City: ");
-                    contact.city = Console.ReadLine();
-                    System.Console.WriteLine("Enter State name: ");
-                    contact.state = Console.ReadLine();
-                    System.Console.WriteLine("Enter Zip code: ");
-                    contact.zip = Convert.ToInt32(Console.ReadLine());
-                    System.Console.WriteLine("Enter Phone: ");
-                    contact.phone = Console.ReadLine();
-                    System.Console.WriteLine("Enter Email: ");
-                    contact.email = Console.ReadLine();
+        //             System.Console.WriteLine("Enter first name: ");
+        //             contact.firstName = Console.ReadLine();
+        //             System.Console.WriteLine("Enter last name: ");
+        //             contact.lastName = Console.ReadLine();
+        //             System.Console.WriteLine("Enter Address: ");
+        //             contact.address = Console.ReadLine();
+        //             System.Console.WriteLine("Enter City: ");
+        //             contact.city = Console.ReadLine();
+        //             System.Console.WriteLine("Enter State name: ");
+        //             contact.state = Console.ReadLine();
+        //             System.Console.WriteLine("Enter Zip code: ");
+        //             contact.zip = Convert.ToInt32(Console.ReadLine());
+        //             System.Console.WriteLine("Enter Phone: ");
+        //             contact.phone = Console.ReadLine();
+        //             System.Console.WriteLine("Enter Email: ");
+        //             contact.email = Console.ReadLine();
 
-                    directory[name].AddContact(contact);
+        //             directory[name].AddContact(contact);
 
-                    directory[name].DisplayContacts();
+        //             directory[name].DisplayContacts();
 
-                    System.Console.WriteLine("Do you want to add another contact details if yes/no.");
-                    string choice = Console.ReadLine();
-                    AddContactsInAddressBook = choice.Equals("yes");
-                }
-                else
-                {
-                    System.Console.WriteLine($"address book name {name} doesn't exists");
-                    break;
-                }
-            }
+        //             System.Console.WriteLine("Do you want to add another contact details if yes/no.");
+        //             string choice = Console.ReadLine();
+        //             AddContactsInAddressBook = choice.Equals("yes");
+        //         }
+        //         else
+        //         {
+        //             System.Console.WriteLine($"address book name {name} doesn't exists");
+        //             break;
+        //         }
+        //     }
+        // }
+
+
+        // uc-07 ensuring their is no duplicate contact details in any addressbook.
+        
+        // AddressBook addressBook = new AddressBook();
+        //     Contact contact1 = new Contact
+        //     {
+        //         firstName = "Prashant",
+        //         lastName = "Varshney",
+        //         address = "123 Main",
+        //         city = "CityA",
+        //         state = "StateA",
+        //         zip = 12345,
+        //         phone = "123-456-7890",
+        //         email = "prashant.varshney@example.com"
+        //     };
+        //     addressBook.AddContact(contact1);
+        //     // Attempting to add duplicate contact
+        //     Contact contact2 = new Contact
+        //     {
+        //         firstName = "Prashant",
+        //         lastName = "Varshney",
+        //         address = "456 Elm",
+        //         city = "CityB",
+        //         state = "StateB",
+        //         zip = 67890,
+        //         phone = "098-765-4321",
+        //         email = "pc@gmail.com",
+        //     };
+        //     addressBook.AddContact(contact2); // adding duplicate
+
+
         }
     }
 }
