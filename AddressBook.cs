@@ -60,6 +60,19 @@ namespace AddressBook.AddressBook
             System.Console.WriteLine("Enter updated Email: ");
             updated.email = Console.ReadLine();
         }
+
+        public void DeleteContact(string name)
+        {
+            Contact contact = contacts.Find(c => $"{c.firstName} {c.lastName}".Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            if(contact != null)
+            {
+                System.Console.WriteLine("Deleting the contact");
+                contacts.Remove(contact);
+                System.Console.WriteLine("Deleting Successful");
+            }
+        }
+
         public void DisplayContacts()
         {
             System.Console.WriteLine("\n--------Address Book--------");

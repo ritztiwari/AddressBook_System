@@ -39,7 +39,9 @@ namespace AddressBook.AddressBook
             addressBook.DisplayContacts(); // displaying contacts
 
             string name = "rishabh tiwari";
-            addressBook.EditContact(name);
+            // addressBook.EditContact(name);
+
+            addressBook.DeleteContact(name);
         }
     }
 }
