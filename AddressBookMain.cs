@@ -159,32 +159,89 @@ namespace AddressBook.AddressBook
 
         // uc-07 ensuring their is no duplicate contact details in any addressbook.
         
-        AddressBook addressBook = new AddressBook();
-            Contact contact1 = new Contact
+        // AddressBook addressBook = new AddressBook();
+        //     Contact contact1 = new Contact
+        //     {
+        //         firstName = "Prashant",
+        //         lastName = "Varshney",
+        //         address = "123 Main",
+        //         city = "CityA",
+        //         state = "StateA",
+        //         zip = 12345,
+        //         phone = "123-456-7890",
+        //         email = "prashant.varshney@example.com"
+        //     };
+        //     addressBook.AddContact(contact1);
+        //     // Attempting to add duplicate contact
+        //     Contact contact2 = new Contact
+        //     {
+        //         firstName = "Prashant",
+        //         lastName = "Varshney",
+        //         address = "456 Elm",
+        //         city = "CityB",
+        //         state = "StateB",
+        //         zip = 67890,
+        //         phone = "098-765-4321",
+        //         email = "pc@gmail.com",
+        //     };
+        //     addressBook.AddContact(contact2); // adding duplicate
+
+        // UC-08: Search persons by city or state across address books
+            AddressBooks system = new AddressBooks();
+            system.AddAddressBook("dost");
+            system.AddAddressBook("Family");
+            // Adding contacts to Friends Address Book
+            var friendsBook = system.GetAddressBook("dost");
+            friendsBook.AddContact(new Contact
             {
-                firstName = "Prashant",
-                lastName = "Varshney",
-                address = "123 Main",
-                city = "CityA",
-                state = "StateA",
-                zip = 12345,
-                phone = "123-456-7890",
-                email = "prashant.varshney@example.com"
-            };
-            addressBook.AddContact(contact1);
-            // Attempting to add duplicate contact
-            Contact contact2 = new Contact
+                firstName = "Uday",
+                lastName = "Gupta",
+                city = "Agra",
+                state = "Uttar Pradesh"
+            });
+            friendsBook.AddContact(new Contact
             {
-                firstName = "Prashant",
+                firstName = "Arjun",
+                lastName = "Chauhan",
+                city = "Delhi",
+                state = "Delhi"
+            });
+            // Adding contacts to Family Address Book
+            var familyBook = system.GetAddressBook("Family");
+            familyBook.AddContact(new Contact
+            {
+                firstName = "Hardik",
                 lastName = "Varshney",
-                address = "456 Elm",
-                city = "CityB",
-                state = "StateB",
-                zip = 67890,
-                phone = "098-765-4321",
-                email = "pc@gmail.com",
-            };
-            addressBook.AddContact(contact2); // adding duplicate
+                city = "Greator Noida",
+                state = "Uttar Pradesh"
+            });
+
+            familyBook.AddContact(new Contact
+            {
+                firstName = "Rishabh",
+                lastName = "Tiwari",
+                city = "Ghaziabad",
+                state = "UP"
+            });
+            // Searching persons by city
+            string searchCity = "Agra";
+            var personInCity = system.SearchPersonByCity(searchCity);
+            Console.WriteLine($"\nPersons in city '{searchCity}':");
+            foreach (var person in personInCity)
+            {
+                System.Console.WriteLine($"- {person.firstName} {person.lastName} ({person.city}, {person.state})");
+            }
+            // Searching persons by state
+            string searchState = "Uttar Pradesh";
+            var personInState = system.SearchPersonByState(searchState);
+            Console.WriteLine($"\nPersons in state '{searchState}':");
+            foreach (var person in personInState)
+            {
+                System.Console.WriteLine($"- {person.firstName} {person.lastName} ({person.city}, {person.state})");
+            }
+
+
+
 
 
         }

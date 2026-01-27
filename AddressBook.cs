@@ -81,5 +81,20 @@ namespace AddressBook.AddressBook
                 c.Display();
             }
         }
+
+                // UC-08: Ability to search Person in a City or State across the multiple Address Book
+        public List<Contact> SearchByCity(string city)
+        {
+            return contacts
+                .Where(c => c.city.Equals(city, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+        public List<Contact> SearchByState(string state)
+        {
+            return contacts
+                .Where(c => c.state.Equals(state, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
     }
 }
