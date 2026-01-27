@@ -14,7 +14,7 @@ namespace AddressBook.AddressBook
             // // displaying the contact details
             // contact.Display();
 
-             AddressBook addressBook = new AddressBook(); // address book
+            AddressBook addressBook = new AddressBook(); // address book
 
             Contact contact = new Contact();
             // taking details from console
@@ -37,6 +37,9 @@ namespace AddressBook.AddressBook
 
             addressBook.AddContact(contact);
             addressBook.DisplayContacts(); // displaying contacts
+
+            string name = "rishabh tiwari";
+            addressBook.EditContact(name);
         }
     }
 }
